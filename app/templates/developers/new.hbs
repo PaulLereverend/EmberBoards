@@ -1,0 +1,13 @@
+<div class="ui container">
+<br>
+<div class="ui segment">
+Identité
+<div class="ui input">
+  {{input value=model.copy.identity class="ui input" type="text" placeholder="Nom..." name="identity"}}
+</div>
+<button {{action "save" model}} class="ui green icon button">
+    <i class="check circle icon"></i> Valider
+  </button> 
+</div>
+</div>
+{{outlet}}

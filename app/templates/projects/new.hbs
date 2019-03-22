@@ -1,0 +1,37 @@
+<div class="ui container">
+<br>
+<div class="ui segment">
+Name
+<div class="ui input">
+  {{input value=model.copy.name class="ui input" type="text" placeholder="Nom..." name="name"}}
+</div>
+Descriptif
+<div class="ui input">
+  {{input value=model.copy.descriptif class="ui input" type="text" placeholder="Descriptif..." name="descriptif"}}
+</div>
+Start date
+<div class="ui input">
+  {{input value=model.copy.creationDate class="ui input" type="date" placeholder="Start date..." name="creationDate"}}
+</div>
+Due date
+<div class="ui input">
+  {{input value=model.copy.dueDate class="ui input" type="date" placeholder="Due date..." name="dueDate"}}
+</div>
+{{#ui-dropdown class="selection" name="owner" selected=model.dev onChange=(action (mut model.dev)) as |execute mapper|}}
+  <div class="default text">Owner</div>
+  <i class="dropdown icon"></i>
+  <div class="menu">
+    {{#each model.devs as |dev|}}
+      <div data-value="{{map-value mapper dev}}" name="owner" class="item">
+        {{dev.identity}}
+      </div>
+    {{/each}}
+  </div>
+{{/ui-dropdown}}
+
+<button {{action "save" model model.dev}} class="ui green icon button">
+    <i class="check circle icon"></i> Valider
+  </button> 
+</div>
+</div>
+{{outlet}}

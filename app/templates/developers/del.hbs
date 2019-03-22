@@ -1,0 +1,16 @@
+<div class="ui container">
+    <br>
+<div class="ui icon message">
+    <i class="question circle icon"></i>
+  <div class="content">
+    <p>Confirmer la suppression de {{model.identity}}</p>
+    <button {{action "delete" model}} class="ui green icon button">
+    <i class="check circle icon"></i> Valider
+  </button> 
+  {{#link-to 'developers' class="ui red icon button"}}
+            <i class="close icon"></i> Annuler
+    {{/link-to}}
+  </div>
+</div>
+</div>
+{{outlet}}

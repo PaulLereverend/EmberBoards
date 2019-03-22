@@ -41,8 +41,13 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
-  }
+    
 
+  }
+  ENV.contentSecurityPolicy = {
+    // ... other stuff here
+    'connect-src': "'self' http://127.0.0.1:8080"
+  }
   if (environment === 'production') {
     // here you can enable a production-specific feature
   }

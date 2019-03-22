@@ -1,0 +1,39 @@
+<div class="ui container">
+<h1>model/projects</h1>
+{{#link-to 'projects.new' class="ui orange icon button"}}
+    <i class="add icon"></i> Add a project
+  {{/link-to}} 
+
+<table class="ui single line table">
+  <thead>
+    <tr>
+        <th>Project</th>
+        <th>Descriptif</th>
+        <th>Start date</th>
+        <th>Due date</th>
+        <th>Owner</th>
+        <th></th>
+  </tr></thead>
+  <tbody>
+      {{#each model as |project|}}
+    <tr>
+      <td data-label="Name">{{project.name}}</td>
+        <td data-label="Descriptif">{{project.descriptif}}</td>
+      <td data-label="startdate">{{moment-format project.creationDate 'MM-DD-YYYY' 'MM-DD-YYYY'}}</td>
+      <td data-label="duedate">{{moment-format project.dueDate 'MM-DD-YYYY' 'MM-DD-YYYY'}}</td>
+    <td data-label="owner">{{project.owner.identity}}</td>
+      <td data-label="buttons" style="text-align: right">
+        {{#link-to 'projects.edit' project class="ui yellow inverted circular icon button"}}
+            <i class="edit icon"></i>
+        {{/link-to}}
+        {{#link-to 'projects.del' project class="ui red inverted circular icon button"}}
+            <i class="close icon"></i>
+        {{/link-to}}
+        </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+
+{{outlet}}

@@ -1,0 +1,28 @@
+<div class="ui container">
+<h1>model/developper</h1>
+{{#link-to 'developers.new' class="ui green icon button"}}
+    <i class="add icon"></i> Ajouter un dev
+  {{/link-to}} 
+
+<table class="ui single line table">
+  <thead>
+    <tr><th colspan="3">Identity</th>
+  </tr></thead>
+  <tbody>
+      {{#each model as |dev|}}
+    <tr>
+      <td data-label="Name">{{dev.identity}}</td>
+      <td data-label="buttons" style="text-align: right">
+        {{#link-to 'developers.edit' dev class="ui yellow inverted circular icon button"}}
+            <i class="edit icon"></i>
+        {{/link-to}}
+        {{#link-to 'developers.del' dev class="ui red inverted circular icon button"}}
+            <i class="close icon"></i>
+        {{/link-to}}
+        </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+{{outlet}} 
