@@ -9,6 +9,9 @@ export default Route.extend({
       delete(dev){
         dev.destroyRecord();
         this.transitionTo('developers');
+      },
+      setSelection: function(selected) {
+        this.set("model.copy.owner", this.store.findById(selected));
       }
     }
   }

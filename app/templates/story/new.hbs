@@ -5,9 +5,9 @@ Name
 <div class="ui input">
   {{input value=model.copy.name class="ui input" type="text" placeholder="Nom..." name="name"}}
 </div>
-Descriptif
+Description
 <div class="ui input">
-  {{input value=model.copy.descriptif class="ui input" type="text" placeholder="Descriptif..." name="descriptif"}}
+  {{input value=model.copy.description class="ui input" type="text" placeholder="Descriptif..." name="description"}}
 </div>
 Start date
 <div class="ui input">
@@ -17,12 +17,6 @@ Due date
 <div class="ui input">
   {{input value=model.copy.dueDate class="ui input" type="date" placeholder="Due date..." name="dueDate"}}
 </div>
-
-<select onchange={{action "setSelection" value="target.value"}}>
-    {{#each model.devs as |dev|}}
-  3    <option value={{dev.id}}>{{dev.identity}}</option>
-  4  {{/each}}
-</select>
 <button {{action "save" model}} class="ui green icon button">
     <i class="check circle icon"></i> Valider
   </button> 

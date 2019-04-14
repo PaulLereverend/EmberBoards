@@ -1,0 +1,19 @@
+Stories 
+<div class="ui container">
+{{#link-to 'story.new' class="ui orange icon button"}}
+    <i class="add icon"></i> Add a story
+  {{/link-to}} 
+
+    <div class="ui celled list">
+{{#each model.stories as |story|}}
+    <div class="item">
+    <i class="file icon"></i>
+    <div class="content">
+      <div class="header">{{story.code}}</div>
+      {{story.description}}
+    </div>
+  </div>
+{{/each}}
+</div>
+</div>
+{{outlet}}
